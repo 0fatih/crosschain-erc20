@@ -17,3 +17,19 @@ Chains can easily change.
 
 I know, using a signature like this decreases the security of the program. But, I didn't want to take `expected gas fee + $20` gas fee from the user, like Avalanche's Bridge did.
 If you are not an expert of web2 security, you shouldn't use this in your project. Because if the verifier private key leaked, your project will be trash.
+
+# Setting .env File
+
+If you run this program, you need a `.env` file in your `./bridge/` directory like this:
+
+```
+VERIFIER_PK="" # Server side verifier's private key
+CALLER_PK="" # Example user's private key
+
+FUJI_ADDRESS="" # Fuji address of your token smart contract
+BSC_ADDRESS="" # BSC address of your token smart contarct
+
+# These are public rpc end-points.
+FUJI_PROVIDER="https://api.avax-test.network/ext/bc/C/rpc"
+BSC_PROVIDER="https://data-seed-prebsc-1-s1.binance.org:8545/"
+```
